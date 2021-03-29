@@ -14,7 +14,24 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OAw-fc-QXM" id="d6r-2x-Fum">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lo3-0a-kpn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Lo3-0a-kpn" secondAttribute="trailing" id="7IZ-NW-cdD"/>
+                    <constraint firstItem="Lo3-0a-kpn" firstAttribute="leading" secondItem="d6r-2x-Fum" secondAttribute="leading" id="G2Y-gX-4Gw"/>
+                    <constraint firstItem="Lo3-0a-kpn" firstAttribute="top" secondItem="d6r-2x-Fum" secondAttribute="top" id="S1Q-N7-J0D"/>
+                    <constraint firstAttribute="bottom" secondItem="Lo3-0a-kpn" secondAttribute="bottom" id="lu0-eA-xHB"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lblName" destination="Lo3-0a-kpn" id="RMl-35-mMF"/>
+            </connections>
             <point key="canvasLocation" x="-126" y="10"/>
         </tableViewCell>
     </objects>

@@ -6,34 +6,33 @@
 //
 
 import Foundation
-import RealmSwift
 import ObjectMapper
 
-class Album: Object, Mappable {
-    var wrapperType: String = ""
-    var collectionType: String = ""
-    var artistId: Int = 0
-    var collectionId: Int = 0
-    var amgArtistId: Int = 0
-    var artistName: String = ""
-    var collectionName: String = ""
-    var collectionCensoredName: String = ""
-    var artistViewUrl: String = ""
-    var collectionViewUrl: String = ""
-    var artworkUrl60: String = ""
-    var artworkUrl100: String = ""
-    var collectionPrice: NSDecimalNumber = NSDecimalNumber()
-    var collectionExplicitness: String = ""
-    var trackCount: Int = 0
-    var copyright: String = ""
-    var country: String = ""
-    var currency: String = ""
-    var releaseDate: Date = Date() //"2005-03-01T08:00:00Z"
-    var primaryGenreName: String = ""
-    
-    required convenience init?(map: Map) {
-        self.init(map: map)
+class Album: Mappable {
+    required init?(map: Map) {
+        
     }
+    
+    var wrapperType: String?
+    var collectionType: String?
+    var artistId: Int?
+    var collectionId: Int?
+    var amgArtistId: Int?
+    var artistName: String?
+    var collectionName: String?
+    var collectionCensoredName: String?
+    var artistViewUrl: String?
+    var collectionViewUrl: String?
+    var artworkUrl60: String?
+    var artworkUrl100: String?
+    var collectionPrice: NSDecimalNumber?
+    var collectionExplicitness: String?
+    var trackCount: Int?
+    var copyright: String?
+    var country: String?
+    var currency: String?
+    var releaseDate: Date? //"2005-03-01T08:00:00Z"
+    var primaryGenreName: String?
     
     func mapping(map: Map) {
         wrapperType <- map["wrapperType"]

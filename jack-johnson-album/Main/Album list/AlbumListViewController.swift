@@ -28,6 +28,17 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     }
     
     func setupTableViewWithRx() {
-        
+        viewModel.currentList.bind(to: tableView.rx.items(cellIdentifier: AlbumListCell.reuseId,
+                                                          cellType: AlbumListCell.self))
+        { cellIndex, album, cell in
+            cell.setupCellWithAlbum(album)
+        }.disposed(by: disposeBag)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.getAlbumList().subscribe(onError: { error in
+            print(error.localizedDescription)
+        }).disposed(by: disposeBag)
     }
 }

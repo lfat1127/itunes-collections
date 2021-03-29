@@ -31,6 +31,10 @@
 		716BB65E261202680054F27B /* CustomCellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB65D261202680054F27B /* CustomCellable.swift */; };
 		716BB66226120A1E0054F27B /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB66126120A1E0054F27B /* Album.swift */; };
 		716BB67D2612108C0054F27B /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB67C2612108C0054F27B /* ObjectMapper */; };
+		716BB683261212220054F27B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB682261212220054F27B /* NetworkManager.swift */; };
+		716BB687261212E90054F27B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB686261212E90054F27B /* NetworkService.swift */; };
+		716BB68B2612153D0054F27B /* ItunesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB68A2612153D0054F27B /* ItunesSearchResponse.swift */; };
+		716BB690261226D10054F27B /* NetworkServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB68F261226D10054F27B /* NetworkServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		716BB658261202290054F27B /* AlbumListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumListCell.xib; sourceTree = "<group>"; };
 		716BB65D261202680054F27B /* CustomCellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellable.swift; sourceTree = "<group>"; };
 		716BB66126120A1E0054F27B /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		716BB682261212220054F27B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		716BB686261212E90054F27B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		716BB68A2612153D0054F27B /* ItunesSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchResponse.swift; sourceTree = "<group>"; };
+		716BB68F261226D10054F27B /* NetworkServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,9 @@
 				716BB6052611F62E0054F27B /* Assets.xcassets */,
 				716BB6072611F62E0054F27B /* LaunchScreen.storyboard */,
 				716BB60A2611F62E0054F27B /* Info.plist */,
+				716BB689261215190054F27B /* Responses */,
+				716BB681261212140054F27B /* Services */,
+				716BB6802612120C0054F27B /* Managers */,
 				716BB66026120A110054F27B /* Models */,
 				716BB65B261202530054F27B /* Protocols */,
 				716BB6312611FB980054F27B /* Base view model */,
@@ -177,6 +188,31 @@
 				716BB66126120A1E0054F27B /* Album.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		716BB6802612120C0054F27B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				716BB682261212220054F27B /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		716BB681261212140054F27B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				716BB686261212E90054F27B /* NetworkService.swift */,
+				716BB68F261226D10054F27B /* NetworkServiceManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		716BB689261215190054F27B /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				716BB68A2612153D0054F27B /* ItunesSearchResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,14 +304,18 @@
 				716BB6502611FE9F0054F27B /* AlbumListViewModel.swift in Sources */,
 				716BB5FF2611F62D0054F27B /* SceneDelegate.swift in Sources */,
 				716BB62F2611FB2E0054F27B /* BaseTabBarController.swift in Sources */,
+				716BB690261226D10054F27B /* NetworkServiceManager.swift in Sources */,
 				716BB65E261202680054F27B /* CustomCellable.swift in Sources */,
 				716BB66226120A1E0054F27B /* Album.swift in Sources */,
 				716BB64B2611FD320054F27B /* BookmarkedListViewController.swift in Sources */,
 				716BB63F2611FC7B0054F27B /* MainTabBarController.swift in Sources */,
 				716BB6262611FA1B0054F27B /* BaseViewController.swift in Sources */,
 				716BB62C2611FAAA0054F27B /* BaseMVVMViewController.swift in Sources */,
+				716BB687261212E90054F27B /* NetworkService.swift in Sources */,
 				716BB6332611FBB10054F27B /* BaseViewModel.swift in Sources */,
 				716BB6472611FD260054F27B /* AlbumListViewController.swift in Sources */,
+				716BB68B2612153D0054F27B /* ItunesSearchResponse.swift in Sources */,
+				716BB683261212220054F27B /* NetworkManager.swift in Sources */,
 				716BB6422611FCB40054F27B /* MainViewModel.swift in Sources */,
 				716BB655261202200054F27B /* AlbumListCell.swift in Sources */,
 			);
