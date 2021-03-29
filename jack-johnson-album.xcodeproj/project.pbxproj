@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		716BB6042611F62D0054F27B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716BB6022611F62D0054F27B /* Main.storyboard */; };
 		716BB6062611F62E0054F27B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716BB6052611F62E0054F27B /* Assets.xcassets */; };
 		716BB6092611F62E0054F27B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 716BB6072611F62E0054F27B /* LaunchScreen.storyboard */; };
+		716BB6142611F7320054F27B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB6132611F7320054F27B /* RxCocoa */; };
+		716BB6162611F7320054F27B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB6152611F7320054F27B /* RxSwift */; };
+		716BB61A2611F7AD0054F27B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB6192611F7AD0054F27B /* RealmSwift */; };
+		716BB61C2611F7AD0054F27B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB61B2611F7AD0054F27B /* Realm */; };
+		716BB61F2611F7C90054F27B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB61E2611F7C90054F27B /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716BB61F2611F7C90054F27B /* Alamofire in Frameworks */,
+				716BB61A2611F7AD0054F27B /* RealmSwift in Frameworks */,
+				716BB6162611F7320054F27B /* RxSwift in Frameworks */,
+				716BB61C2611F7AD0054F27B /* Realm in Frameworks */,
+				716BB6142611F7320054F27B /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +93,13 @@
 			dependencies = (
 			);
 			name = "jack-johnson-album";
+			packageProductDependencies = (
+				716BB6132611F7320054F27B /* RxCocoa */,
+				716BB6152611F7320054F27B /* RxSwift */,
+				716BB6192611F7AD0054F27B /* RealmSwift */,
+				716BB61B2611F7AD0054F27B /* Realm */,
+				716BB61E2611F7C90054F27B /* Alamofire */,
+			);
 			productName = "jack-johnson-album";
 			productReference = 716BB5F92611F62D0054F27B /* jack-johnson-album.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +127,11 @@
 				Base,
 			);
 			mainGroup = 716BB5F02611F62D0054F27B;
+			packageReferences = (
+				716BB6122611F7320054F27B /* XCRemoteSwiftPackageReference "RxSwift" */,
+				716BB6182611F7AD0054F27B /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				716BB61D2611F7C90054F27B /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 716BB5FA2611F62D0054F27B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,6 +363,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		716BB6122611F7320054F27B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = exactVersion;
+				version = 6.1.0;
+			};
+		};
+		716BB6182611F7AD0054F27B /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = exactVersion;
+				version = 10.7.2;
+			};
+		};
+		716BB61D2611F7C90054F27B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		716BB6132611F7320054F27B /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716BB6122611F7320054F27B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		716BB6152611F7320054F27B /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716BB6122611F7320054F27B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		716BB6192611F7AD0054F27B /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716BB6182611F7AD0054F27B /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		716BB61B2611F7AD0054F27B /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716BB6182611F7AD0054F27B /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		716BB61E2611F7C90054F27B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716BB61D2611F7C90054F27B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 716BB5F12611F62D0054F27B /* Project object */;
 }
