@@ -25,6 +25,12 @@
 		716BB6422611FCB40054F27B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6412611FCB40054F27B /* MainViewModel.swift */; };
 		716BB6472611FD260054F27B /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6462611FD260054F27B /* AlbumListViewController.swift */; };
 		716BB64B2611FD320054F27B /* BookmarkedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB64A2611FD320054F27B /* BookmarkedListViewController.swift */; };
+		716BB6502611FE9F0054F27B /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB64F2611FE9F0054F27B /* AlbumListViewModel.swift */; };
+		716BB655261202200054F27B /* AlbumListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB654261202200054F27B /* AlbumListCell.swift */; };
+		716BB659261202290054F27B /* AlbumListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716BB658261202290054F27B /* AlbumListCell.xib */; };
+		716BB65E261202680054F27B /* CustomCellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB65D261202680054F27B /* CustomCellable.swift */; };
+		716BB66226120A1E0054F27B /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB66126120A1E0054F27B /* Album.swift */; };
+		716BB67D2612108C0054F27B /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB67C2612108C0054F27B /* ObjectMapper */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +49,11 @@
 		716BB6412611FCB40054F27B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		716BB6462611FD260054F27B /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		716BB64A2611FD320054F27B /* BookmarkedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedListViewController.swift; sourceTree = "<group>"; };
+		716BB64F2611FE9F0054F27B /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
+		716BB654261202200054F27B /* AlbumListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListCell.swift; sourceTree = "<group>"; };
+		716BB658261202290054F27B /* AlbumListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumListCell.xib; sourceTree = "<group>"; };
+		716BB65D261202680054F27B /* CustomCellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellable.swift; sourceTree = "<group>"; };
+		716BB66126120A1E0054F27B /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716BB67D2612108C0054F27B /* ObjectMapper in Frameworks */,
 				716BB61F2611F7C90054F27B /* Alamofire in Frameworks */,
 				716BB61A2611F7AD0054F27B /* RealmSwift in Frameworks */,
 				716BB6162611F7320054F27B /* RxSwift in Frameworks */,
@@ -85,6 +97,8 @@
 				716BB6052611F62E0054F27B /* Assets.xcassets */,
 				716BB6072611F62E0054F27B /* LaunchScreen.storyboard */,
 				716BB60A2611F62E0054F27B /* Info.plist */,
+				716BB66026120A110054F27B /* Models */,
+				716BB65B261202530054F27B /* Protocols */,
 				716BB6312611FB980054F27B /* Base view model */,
 				716BB6242611F9530054F27B /* Base view controller */,
 				716BB63A2611FC570054F27B /* Main */,
@@ -126,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				716BB6462611FD260054F27B /* AlbumListViewController.swift */,
+				716BB64F2611FE9F0054F27B /* AlbumListViewModel.swift */,
+				716BB6522612020B0054F27B /* TableViewCell */,
 			);
 			path = "Album list";
 			sourceTree = "<group>";
@@ -136,6 +152,31 @@
 				716BB64A2611FD320054F27B /* BookmarkedListViewController.swift */,
 			);
 			path = "Bookmarked list";
+			sourceTree = "<group>";
+		};
+		716BB6522612020B0054F27B /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				716BB654261202200054F27B /* AlbumListCell.swift */,
+				716BB658261202290054F27B /* AlbumListCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		716BB65B261202530054F27B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				716BB65D261202680054F27B /* CustomCellable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		716BB66026120A110054F27B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				716BB66126120A1E0054F27B /* Album.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +201,7 @@
 				716BB6192611F7AD0054F27B /* RealmSwift */,
 				716BB61B2611F7AD0054F27B /* Realm */,
 				716BB61E2611F7C90054F27B /* Alamofire */,
+				716BB67C2612108C0054F27B /* ObjectMapper */,
 			);
 			productName = "jack-johnson-album";
 			productReference = 716BB5F92611F62D0054F27B /* jack-johnson-album.app */;
@@ -192,6 +234,7 @@
 				716BB6122611F7320054F27B /* XCRemoteSwiftPackageReference "RxSwift" */,
 				716BB6182611F7AD0054F27B /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				716BB61D2611F7C90054F27B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				716BB67B2612108C0054F27B /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 			);
 			productRefGroup = 716BB5FA2611F62D0054F27B /* Products */;
 			projectDirPath = "";
@@ -210,6 +253,7 @@
 				716BB63C2611FC6C0054F27B /* Main.storyboard in Resources */,
 				716BB6092611F62E0054F27B /* LaunchScreen.storyboard in Resources */,
 				716BB6062611F62E0054F27B /* Assets.xcassets in Resources */,
+				716BB659261202290054F27B /* AlbumListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,8 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				716BB5FD2611F62D0054F27B /* AppDelegate.swift in Sources */,
+				716BB6502611FE9F0054F27B /* AlbumListViewModel.swift in Sources */,
 				716BB5FF2611F62D0054F27B /* SceneDelegate.swift in Sources */,
 				716BB62F2611FB2E0054F27B /* BaseTabBarController.swift in Sources */,
+				716BB65E261202680054F27B /* CustomCellable.swift in Sources */,
+				716BB66226120A1E0054F27B /* Album.swift in Sources */,
 				716BB64B2611FD320054F27B /* BookmarkedListViewController.swift in Sources */,
 				716BB63F2611FC7B0054F27B /* MainTabBarController.swift in Sources */,
 				716BB6262611FA1B0054F27B /* BaseViewController.swift in Sources */,
@@ -230,6 +277,7 @@
 				716BB6332611FBB10054F27B /* BaseViewModel.swift in Sources */,
 				716BB6472611FD260054F27B /* AlbumListViewController.swift in Sources */,
 				716BB6422611FCB40054F27B /* MainViewModel.swift in Sources */,
+				716BB655261202200054F27B /* AlbumListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +497,14 @@
 				version = 5.4.1;
 			};
 		};
+		716BB67B2612108C0054F27B /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper";
+			requirement = {
+				kind = exactVersion;
+				version = 4.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -476,6 +532,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 716BB61D2611F7C90054F27B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		716BB67C2612108C0054F27B /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716BB67B2612108C0054F27B /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

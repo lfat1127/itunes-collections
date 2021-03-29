@@ -24,21 +24,37 @@
             </objects>
             <point key="canvasLocation" x="203" y="78"/>
         </scene>
-        <!--Item 1-->
+        <!--Jack Johnson-->
         <scene sceneID="y4c-D7-rE4">
             <objects>
-                <viewController id="VJl-p2-q9Q" customClass="AlbumListViewController" customModule="jack_johnson_album" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Jack Johnson" id="VJl-p2-q9Q" customClass="AlbumListViewController" customModule="jack_johnson_album" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="970-c3-LXB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UCO-qd-4WY">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="p9T-3h-kkZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UCO-qd-4WY" firstAttribute="trailing" secondItem="p9T-3h-kkZ" secondAttribute="trailing" id="BJO-N7-Y4j"/>
+                            <constraint firstItem="UCO-qd-4WY" firstAttribute="leading" secondItem="p9T-3h-kkZ" secondAttribute="leading" id="Jrq-EN-NMG"/>
+                            <constraint firstItem="UCO-qd-4WY" firstAttribute="top" secondItem="p9T-3h-kkZ" secondAttribute="top" id="Zbc-VZ-OaJ"/>
+                            <constraint firstItem="UCO-qd-4WY" firstAttribute="bottom" secondItem="p9T-3h-kkZ" secondAttribute="bottom" id="xKv-2b-okU"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="if7-eM-Jc8"/>
+                    <navigationItem key="navigationItem" title="Jack Johnson" id="qJK-GX-UTu"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="UCO-qd-4WY" id="Y3S-Az-aXS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLN-KW-dEg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="203" y="-599"/>
+            <point key="canvasLocation" x="1113.0434782608697" y="-599.33035714285711"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="zhs-1i-fQB">
@@ -50,7 +66,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="VJl-p2-q9Q" kind="relationship" relationship="viewControllers" id="Lag-8E-sP7"/>
+                        <segue destination="4WI-HM-uXe" kind="relationship" relationship="viewControllers" id="Lag-8E-sP7"/>
                         <segue destination="Q9a-mm-Mc1" kind="relationship" relationship="viewControllers" id="G5e-x4-jcM"/>
                     </connections>
                 </tabBarController>
@@ -58,8 +74,28 @@
             </objects>
             <point key="canvasLocation" x="-687" y="-296"/>
         </scene>
+        <!--Album-->
+        <scene sceneID="xoj-Ep-sCC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4WI-HM-uXe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Album" image="library_music-black-24dp" id="if7-eM-Jc8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="D6a-dn-gFC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VJl-p2-q9Q" kind="relationship" relationship="rootViewController" id="VRz-ND-zLc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0GW-tL-biC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.89855072463769" y="-599.33035714285711"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="library_music-black-24dp" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
