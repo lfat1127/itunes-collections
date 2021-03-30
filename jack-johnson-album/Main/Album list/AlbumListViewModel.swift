@@ -25,11 +25,8 @@ class AlbumListViewModel: BaseViewModel {
     
     func bookmarkAlbum(_ album: Album, with bookmarkState: Bool) {
         if bookmarkState {
-//            let obj = AlbumObject()
-//            obj.album = album
             if RealmServiceManager.instance.saveAlbum(album) {
-                getAllBookmarkedAlbum()
-                currentList.accept(originalAlbums)
+                getAllBookmarkedAlbum(true)
             }
         } else {
             if let bookmarkedAlbums = bookmarkedAlbumsResults,
@@ -37,8 +34,7 @@ class AlbumListViewModel: BaseViewModel {
                 bookmarkedAlbum.collectionId == album.collectionId
                }) {
                 if RealmServiceManager.instance.removeAlbum(albumToDelete) {
-                    getAllBookmarkedAlbum()
-                    currentList.accept(originalAlbums)
+                    getAllBookmarkedAlbum(true)
                 }
             }
         }
@@ -54,7 +50,10 @@ class AlbumListViewModel: BaseViewModel {
         }
     }
     
-    func getAllBookmarkedAlbum() {
+    func getAllBookmarkedAlbum(_ shouldReload: Bool = false) {
         bookmarkedAlbumsResults = RealmServiceManager.instance.getAllBookmarkedAlbum()
+        if shouldReload {
+            currentList.accept(originalAlbums)
+        }
     }
 }

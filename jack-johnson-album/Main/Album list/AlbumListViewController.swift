@@ -42,7 +42,7 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
         
         Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Album.self))
             .subscribe { [weak self] indexPath, album in
-                
+                // TODO: may be show a detail view?
                 self?.tableView.deselectRow(at: indexPath, animated: true)
             }.disposed(by: disposeBag)
 
@@ -50,9 +50,13 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getAllBookmarkedAlbum()
         viewModel.getAlbumList().subscribe(onError: { error in
             print(error.localizedDescription)
         }).disposed(by: disposeBag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.getAllBookmarkedAlbum(true)
     }
 }
