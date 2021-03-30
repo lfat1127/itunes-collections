@@ -18,6 +18,5 @@ class ItunesSearchResponse<T: Mappable>: Mappable {
     func mapping(map: Map) {
         resultCount <- map["resultCount"]
         results <- map["results"]
-        print(map["results"].JSON)
     }
 }
