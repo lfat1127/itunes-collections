@@ -40,7 +40,7 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
 
         }.disposed(by: disposeBag)
         
-        Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Album.self))
+        Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(iTunesCollection.self))
             .subscribe { [weak self] indexPath, album in
                 // TODO: may be show a detail view?
                 self?.tableView.deselectRow(at: indexPath, animated: true)

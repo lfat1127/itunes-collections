@@ -16,9 +16,9 @@ class AlbumListCell: BaseTableViewCell, CustomCellable {
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var btnBookmark: UIButton!
     
-    var album: Album?
+    var album: iTunesCollection?
     var isBookMarked: Bool?
-    let onBookmarkBtnTapped = PublishSubject<(Album, Bool)>()
+    let onBookmarkBtnTapped = PublishSubject<(iTunesCollection, Bool)>()
     
     let bookmarkedImage = UIImage(named: "star-24px")
     let nonBookmarkedImage = UIImage(named: "star_border-24px")
@@ -27,7 +27,7 @@ class AlbumListCell: BaseTableViewCell, CustomCellable {
         return "AlbumListCell"
     }
  
-    func setupCellWithAlbum(_ album: Album, bookmarked: Bool = false) {
+    func setupCellWithAlbum(_ album: iTunesCollection, bookmarked: Bool = false) {
         self.album = album
         lblName.text = album.collectionName
         lblDate.text = "Release Date: " + album.releaseDate.getDateStr()

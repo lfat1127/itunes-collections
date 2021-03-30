@@ -11,7 +11,7 @@ import RealmSwift
 class RealmServiceManager {
     public static let instance = RealmServiceManager()
     
-    func saveAlbum(_ album: Album) -> Bool {
+    func saveAlbum(_ album: iTunesCollection) -> Bool {
         if let realm = try? Realm() {
             do {
                 try realm.write {
@@ -26,7 +26,7 @@ class RealmServiceManager {
         return false
     }
     
-    func removeAlbum(_ album: Album) -> Bool  {
+    func removeAlbum(_ album: iTunesCollection) -> Bool  {
         if let realm = try? Realm() {
             do {
                 try realm.write {
@@ -40,10 +40,10 @@ class RealmServiceManager {
         return false
     }
     
-    func getAllBookmarkedAlbum() -> Results<Album>? {
+    func getAllBookmarkedAlbum() -> Results<iTunesCollection>? {
         if let realm = try? Realm() {
             realm.refresh()
-            return realm.objects(Album.self)
+            return realm.objects(iTunesCollection.self)
         }
         return nil
     }

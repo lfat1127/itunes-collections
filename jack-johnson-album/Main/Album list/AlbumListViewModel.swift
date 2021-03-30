@@ -11,9 +11,9 @@ import RxCocoa
 import RealmSwift
 
 class AlbumListViewModel: BaseViewModel {
-    let currentList: BehaviorRelay<[Album]> = BehaviorRelay(value: [])
-    var bookmarkedAlbumsResults: Results<Album>? = nil
-    var originalAlbums: [Album] = []
+    let currentList: BehaviorRelay<[iTunesCollection]> = BehaviorRelay(value: [])
+    var bookmarkedAlbumsResults: Results<iTunesCollection>? = nil
+    var originalAlbums: [iTunesCollection] = []
     
     func getAlbumList() -> Observable<Bool> {
         return NetworkServiceManager.searchItunes().map({ [weak self] searchResponse in
@@ -23,7 +23,7 @@ class AlbumListViewModel: BaseViewModel {
         })
     }
     
-    func bookmarkAlbum(_ album: Album, with bookmarkState: Bool) {
+    func bookmarkAlbum(_ album: iTunesCollection, with bookmarkState: Bool) {
         if bookmarkState {
             if RealmServiceManager.instance.saveAlbum(album) {
                 getAllBookmarkedAlbum(true)
@@ -40,7 +40,7 @@ class AlbumListViewModel: BaseViewModel {
         }
     }
     
-    func isAlbumBookmarked(_ album: Album) -> Bool {
+    func isAlbumBookmarked(_ album: iTunesCollection) -> Bool {
         if let bookmarkedAlbums = bookmarkedAlbumsResults {
             return bookmarkedAlbums.contains { bookmarkedAlbum in
                 bookmarkedAlbum.collectionId == album.collectionId && bookmarkedAlbum.bookmarked

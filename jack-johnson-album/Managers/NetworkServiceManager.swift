@@ -10,8 +10,8 @@ import RxSwift
 import Alamofire
 
 class NetworkServiceManager {
-    static func searchItunes(with term: String = "jack johnson", entity: String = "album") -> Observable<ItunesSearchResponse<Album>> {
-        return NetworkService<ItunesSearchResponse<Album>>()
+    static func searchItunes(with term: String = "jack johnson", entity: String = "album") -> Observable<ItunesSearchResponse<iTunesCollection>> {
+        return NetworkService<ItunesSearchResponse<iTunesCollection>>()
             .get(url: "https://itunes.apple.com/search",
                  params: ["term": term, "entity": entity], encoding: URLEncoding.default)
     }

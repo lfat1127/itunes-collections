@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 import RealmSwift
 
-class Album: Object, Mappable {
+class iTunesCollection: Object, Mappable {
     required convenience init?(map: Map) {
         self.init()
     }
