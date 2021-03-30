@@ -42,6 +42,7 @@
 		716BB6A62612B9EC0054F27B /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6A52612B9EC0054F27B /* BaseTableViewCell.swift */; };
 		716BB6AA261346370054F27B /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB6A9261346370054F27B /* AlamofireImage */; };
 		716BB6AD26134A360054F27B /* RealmServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6AC26134A360054F27B /* RealmServiceManager.swift */; };
+		716BB6B926136D060054F27B /* BookmarkedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6B826136D060054F27B /* BookmarkedListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		716BB6A126123CF60054F27B /* NSDecimalNumber+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDecimalNumber+Ext.swift"; sourceTree = "<group>"; };
 		716BB6A52612B9EC0054F27B /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		716BB6AC26134A360054F27B /* RealmServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServiceManager.swift; sourceTree = "<group>"; };
+		716BB6B826136D060054F27B /* BookmarkedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				716BB6052611F62E0054F27B /* Assets.xcassets */,
 				716BB6072611F62E0054F27B /* LaunchScreen.storyboard */,
 				716BB60A2611F62E0054F27B /* Info.plist */,
+				716BB6BD26136E2F0054F27B /* Shared UI */,
 				716BB6A42612B9C80054F27B /* Base tableView Cell */,
 				716BB69926123AFE0054F27B /* Extension */,
 				716BB69326122EBD0054F27B /* Mapping Transform Type */,
@@ -169,7 +172,6 @@
 			children = (
 				716BB6462611FD260054F27B /* AlbumListViewController.swift */,
 				716BB64F2611FE9F0054F27B /* AlbumListViewModel.swift */,
-				716BB6522612020B0054F27B /* TableViewCell */,
 			);
 			path = "Album list";
 			sourceTree = "<group>";
@@ -178,17 +180,18 @@
 			isa = PBXGroup;
 			children = (
 				716BB64A2611FD320054F27B /* BookmarkedListViewController.swift */,
+				716BB6B826136D060054F27B /* BookmarkedListViewModel.swift */,
 			);
 			path = "Bookmarked list";
 			sourceTree = "<group>";
 		};
-		716BB6522612020B0054F27B /* TableViewCell */ = {
+		716BB6522612020B0054F27B /* AlbumListCell */ = {
 			isa = PBXGroup;
 			children = (
 				716BB654261202200054F27B /* AlbumListCell.swift */,
 				716BB658261202290054F27B /* AlbumListCell.xib */,
 			);
-			path = TableViewCell;
+			path = AlbumListCell;
 			sourceTree = "<group>";
 		};
 		716BB65B261202530054F27B /* Protocols */ = {
@@ -257,6 +260,14 @@
 				716BB6A52612B9EC0054F27B /* BaseTableViewCell.swift */,
 			);
 			path = "Base tableView Cell";
+			sourceTree = "<group>";
+		};
+		716BB6BD26136E2F0054F27B /* Shared UI */ = {
+			isa = PBXGroup;
+			children = (
+				716BB6522612020B0054F27B /* AlbumListCell */,
+			);
+			path = "Shared UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +359,7 @@
 			files = (
 				716BB5FD2611F62D0054F27B /* AppDelegate.swift in Sources */,
 				716BB69F26123B6F0054F27B /* NSDecimalNumberTransform.swift in Sources */,
+				716BB6B926136D060054F27B /* BookmarkedListViewModel.swift in Sources */,
 				716BB6502611FE9F0054F27B /* AlbumListViewModel.swift in Sources */,
 				716BB5FF2611F62D0054F27B /* SceneDelegate.swift in Sources */,
 				716BB62F2611FB2E0054F27B /* BaseTabBarController.swift in Sources */,

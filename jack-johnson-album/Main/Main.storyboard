@@ -8,21 +8,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Bookmark-->
         <scene sceneID="UBb-js-OcT">
             <objects>
                 <viewController id="Q9a-mm-Mc1" customClass="BookmarkedListViewController" customModule="jack_johnson_album" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0af-lu-len">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YW3-pD-jii">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jFJ-yu-NMU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YW3-pD-jii" firstAttribute="top" secondItem="jFJ-yu-NMU" secondAttribute="top" id="Rxe-ef-3BC"/>
+                            <constraint firstItem="YW3-pD-jii" firstAttribute="bottom" secondItem="jFJ-yu-NMU" secondAttribute="bottom" id="YZj-A4-bda"/>
+                            <constraint firstItem="YW3-pD-jii" firstAttribute="trailing" secondItem="jFJ-yu-NMU" secondAttribute="trailing" id="kle-3Q-WnJ"/>
+                            <constraint firstItem="YW3-pD-jii" firstAttribute="leading" secondItem="jFJ-yu-NMU" secondAttribute="leading" id="xZZ-ot-KMn"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="OfF-wt-0v3"/>
+                    <navigationItem key="navigationItem" title="Bookmark" id="rIN-cJ-kRY"/>
+                    <connections>
+                        <outlet property="tableView" destination="YW3-pD-jii" id="zTK-Wo-5YQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NP8-7e-Kp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="203" y="78"/>
+            <point key="canvasLocation" x="1113.0434782608697" y="77.678571428571431"/>
         </scene>
         <!--Jack Johnson-->
         <scene sceneID="y4c-D7-rE4">
@@ -67,7 +82,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="4WI-HM-uXe" kind="relationship" relationship="viewControllers" id="Lag-8E-sP7"/>
-                        <segue destination="Q9a-mm-Mc1" kind="relationship" relationship="viewControllers" id="G5e-x4-jcM"/>
+                        <segue destination="CZz-Kq-ygJ" kind="relationship" relationship="viewControllers" id="G5e-x4-jcM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSU-N1-ncc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -93,9 +108,29 @@
             </objects>
             <point key="canvasLocation" x="202.89855072463769" y="-599.33035714285711"/>
         </scene>
+        <!--Bookmark-->
+        <scene sceneID="uSN-DK-bwx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CZz-Kq-ygJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bookmark" image="star.fill" catalog="system" id="OfF-wt-0v3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2cY-NP-hY0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q9a-mm-Mc1" kind="relationship" relationship="rootViewController" id="Fm9-u2-mx2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqw-88-GLh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="202.89855072463769" y="77.678571428571431"/>
+        </scene>
     </scenes>
     <resources>
         <image name="library_music-black-24dp" width="24" height="24"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

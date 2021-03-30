@@ -43,7 +43,7 @@ class RealmServiceManager {
     func getAllBookmarkedAlbum() -> Results<Album>? {
         if let realm = try? Realm() {
             realm.refresh()
-            return realm.objects(T.self)
+            return realm.objects(Album.self)
         }
         return nil
     }
