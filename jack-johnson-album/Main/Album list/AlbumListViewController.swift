@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     @IBOutlet weak var tableView: UITableView!
@@ -30,13 +31,26 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     func setupTableViewWithRx() {
         viewModel.currentList.bind(to: tableView.rx.items(cellIdentifier: AlbumListCell.reuseId,
                                                           cellType: AlbumListCell.self))
-        { cellIndex, album, cell in
-            cell.setupCellWithAlbum(album)
+        { [weak self] cellIndex, album, cell in
+            guard let this = self else { return }
+            cell.setupCellWithAlbum(album, bookmarked: this.viewModel.isAlbumBookmarked(album))
+            cell.onBookmarkBtnTapped.subscribe { [weak self] (album, bookmarkState) in
+                self?.viewModel.bookmarkAlbum(album, with: !bookmarkState)
+            }.disposed(by: cell.disposeBag)
+
         }.disposed(by: disposeBag)
+        
+        Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(Album.self))
+            .subscribe { [weak self] indexPath, album in
+                
+                self?.tableView.deselectRow(at: indexPath, animated: true)
+            }.disposed(by: disposeBag)
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.getAllBookmarkedAlbum()
         viewModel.getAlbumList().subscribe(onError: { error in
             print(error.localizedDescription)
         }).disposed(by: disposeBag)

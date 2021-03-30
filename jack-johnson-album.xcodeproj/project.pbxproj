@@ -35,6 +35,13 @@
 		716BB687261212E90054F27B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB686261212E90054F27B /* NetworkService.swift */; };
 		716BB68B2612153D0054F27B /* ItunesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB68A2612153D0054F27B /* ItunesSearchResponse.swift */; };
 		716BB690261226D10054F27B /* NetworkServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB68F261226D10054F27B /* NetworkServiceManager.swift */; };
+		716BB69526122EE60054F27B /* DateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB69426122EE60054F27B /* DateFormatTransform.swift */; };
+		716BB69B26123B090054F27B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB69A26123B090054F27B /* Date+Ext.swift */; };
+		716BB69F26123B6F0054F27B /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB69E26123B6F0054F27B /* NSDecimalNumberTransform.swift */; };
+		716BB6A226123CF60054F27B /* NSDecimalNumber+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6A126123CF60054F27B /* NSDecimalNumber+Ext.swift */; };
+		716BB6A62612B9EC0054F27B /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6A52612B9EC0054F27B /* BaseTableViewCell.swift */; };
+		716BB6AA261346370054F27B /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB6A9261346370054F27B /* AlamofireImage */; };
+		716BB6AD26134A360054F27B /* RealmServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6AC26134A360054F27B /* RealmServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +69,12 @@
 		716BB686261212E90054F27B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		716BB68A2612153D0054F27B /* ItunesSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchResponse.swift; sourceTree = "<group>"; };
 		716BB68F261226D10054F27B /* NetworkServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceManager.swift; sourceTree = "<group>"; };
+		716BB69426122EE60054F27B /* DateFormatTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatTransform.swift; sourceTree = "<group>"; };
+		716BB69A26123B090054F27B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		716BB69E26123B6F0054F27B /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
+		716BB6A126123CF60054F27B /* NSDecimalNumber+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDecimalNumber+Ext.swift"; sourceTree = "<group>"; };
+		716BB6A52612B9EC0054F27B /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		716BB6AC26134A360054F27B /* RealmServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +88,7 @@
 				716BB6162611F7320054F27B /* RxSwift in Frameworks */,
 				716BB61C2611F7AD0054F27B /* Realm in Frameworks */,
 				716BB6142611F7320054F27B /* RxCocoa in Frameworks */,
+				716BB6AA261346370054F27B /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +119,9 @@
 				716BB6052611F62E0054F27B /* Assets.xcassets */,
 				716BB6072611F62E0054F27B /* LaunchScreen.storyboard */,
 				716BB60A2611F62E0054F27B /* Info.plist */,
+				716BB6A42612B9C80054F27B /* Base tableView Cell */,
+				716BB69926123AFE0054F27B /* Extension */,
+				716BB69326122EBD0054F27B /* Mapping Transform Type */,
 				716BB689261215190054F27B /* Responses */,
 				716BB681261212140054F27B /* Services */,
 				716BB6802612120C0054F27B /* Managers */,
@@ -194,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				716BB682261212220054F27B /* NetworkManager.swift */,
+				716BB68F261226D10054F27B /* NetworkServiceManager.swift */,
+				716BB6AC26134A360054F27B /* RealmServiceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -202,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				716BB686261212E90054F27B /* NetworkService.swift */,
-				716BB68F261226D10054F27B /* NetworkServiceManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -213,6 +231,32 @@
 				716BB68A2612153D0054F27B /* ItunesSearchResponse.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		716BB69326122EBD0054F27B /* Mapping Transform Type */ = {
+			isa = PBXGroup;
+			children = (
+				716BB69426122EE60054F27B /* DateFormatTransform.swift */,
+				716BB69E26123B6F0054F27B /* NSDecimalNumberTransform.swift */,
+			);
+			path = "Mapping Transform Type";
+			sourceTree = "<group>";
+		};
+		716BB69926123AFE0054F27B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				716BB69A26123B090054F27B /* Date+Ext.swift */,
+				716BB6A126123CF60054F27B /* NSDecimalNumber+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		716BB6A42612B9C80054F27B /* Base tableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				716BB6A52612B9EC0054F27B /* BaseTableViewCell.swift */,
+			);
+			path = "Base tableView Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +282,7 @@
 				716BB61B2611F7AD0054F27B /* Realm */,
 				716BB61E2611F7C90054F27B /* Alamofire */,
 				716BB67C2612108C0054F27B /* ObjectMapper */,
+				716BB6A9261346370054F27B /* AlamofireImage */,
 			);
 			productName = "jack-johnson-album";
 			productReference = 716BB5F92611F62D0054F27B /* jack-johnson-album.app */;
@@ -271,6 +316,7 @@
 				716BB6182611F7AD0054F27B /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				716BB61D2611F7C90054F27B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				716BB67B2612108C0054F27B /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+				716BB6A8261346370054F27B /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = 716BB5FA2611F62D0054F27B /* Products */;
 			projectDirPath = "";
@@ -301,11 +347,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				716BB5FD2611F62D0054F27B /* AppDelegate.swift in Sources */,
+				716BB69F26123B6F0054F27B /* NSDecimalNumberTransform.swift in Sources */,
 				716BB6502611FE9F0054F27B /* AlbumListViewModel.swift in Sources */,
 				716BB5FF2611F62D0054F27B /* SceneDelegate.swift in Sources */,
 				716BB62F2611FB2E0054F27B /* BaseTabBarController.swift in Sources */,
 				716BB690261226D10054F27B /* NetworkServiceManager.swift in Sources */,
 				716BB65E261202680054F27B /* CustomCellable.swift in Sources */,
+				716BB6A226123CF60054F27B /* NSDecimalNumber+Ext.swift in Sources */,
 				716BB66226120A1E0054F27B /* Album.swift in Sources */,
 				716BB64B2611FD320054F27B /* BookmarkedListViewController.swift in Sources */,
 				716BB63F2611FC7B0054F27B /* MainTabBarController.swift in Sources */,
@@ -315,9 +363,13 @@
 				716BB6332611FBB10054F27B /* BaseViewModel.swift in Sources */,
 				716BB6472611FD260054F27B /* AlbumListViewController.swift in Sources */,
 				716BB68B2612153D0054F27B /* ItunesSearchResponse.swift in Sources */,
+				716BB6AD26134A360054F27B /* RealmServiceManager.swift in Sources */,
 				716BB683261212220054F27B /* NetworkManager.swift in Sources */,
 				716BB6422611FCB40054F27B /* MainViewModel.swift in Sources */,
 				716BB655261202200054F27B /* AlbumListCell.swift in Sources */,
+				716BB6A62612B9EC0054F27B /* BaseTableViewCell.swift in Sources */,
+				716BB69526122EE60054F27B /* DateFormatTransform.swift in Sources */,
+				716BB69B26123B090054F27B /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +597,14 @@
 				version = 4.2.0;
 			};
 		};
+		716BB6A8261346370054F27B /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -577,6 +637,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 716BB67B2612108C0054F27B /* XCRemoteSwiftPackageReference "ObjectMapper" */;
 			productName = ObjectMapper;
+		};
+		716BB6A9261346370054F27B /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716BB6A8261346370054F27B /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

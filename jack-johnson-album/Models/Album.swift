@@ -7,32 +7,35 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class Album: Mappable {
-    required init?(map: Map) {
-        
+class Album: Object, Mappable {
+    required convenience init?(map: Map) {
+        self.init()
     }
     
-    var wrapperType: String?
-    var collectionType: String?
-    var artistId: Int?
-    var collectionId: Int?
-    var amgArtistId: Int?
-    var artistName: String?
-    var collectionName: String?
-    var collectionCensoredName: String?
-    var artistViewUrl: String?
-    var collectionViewUrl: String?
-    var artworkUrl60: String?
-    var artworkUrl100: String?
-    var collectionPrice: NSDecimalNumber?
-    var collectionExplicitness: String?
-    var trackCount: Int?
-    var copyright: String?
-    var country: String?
-    var currency: String?
-    var releaseDate: Date? //"2005-03-01T08:00:00Z"
-    var primaryGenreName: String?
+    @objc dynamic var wrapperType: String = ""
+    @objc dynamic var collectionType: String = ""
+    @objc dynamic var artistId: Int = 0
+    @objc dynamic var collectionId: Int = 0
+    @objc dynamic var amgArtistId: Int = 0
+    @objc dynamic var artistName: String = ""
+    @objc dynamic var collectionName: String = ""
+    @objc dynamic var collectionCensoredName: String = ""
+    @objc dynamic var artistViewUrl: String = ""
+    @objc dynamic var collectionViewUrl: String = ""
+    @objc dynamic var artworkUrl60: String = ""
+    @objc dynamic var artworkUrl100: String = ""
+    @objc dynamic var collectionPrice: Double = 0
+    @objc dynamic var collectionExplicitness: String = ""
+    @objc dynamic var trackCount: Int = 0
+    @objc dynamic var copyright: String = ""
+    @objc dynamic var country: String = ""
+    @objc dynamic var currency: String = ""
+    @objc dynamic var releaseDate: Date = Date() //"2005-03-01T08:00:00Z"
+    @objc dynamic var primaryGenreName: String = ""
+    
+    @objc dynamic var bookmarked: Bool = false
     
     func mapping(map: Map) {
         wrapperType <- map["wrapperType"]
@@ -53,7 +56,7 @@ class Album: Mappable {
         copyright <- map["copyright"]
         country <- map["country"]
         currency <- map["currency"]
-        releaseDate <- (map["releaseDate"], DateTransform()) //"2005-03-01T08:00:00Z"
+        releaseDate <- (map["releaseDate"], DateFormatTransform("yyyy-MM-dd'T'HH:mm:ss'Z'")) //"2005-03-01T08:00:00Z"
         primaryGenreName <- map["primaryGenreName"]
     }
 }
