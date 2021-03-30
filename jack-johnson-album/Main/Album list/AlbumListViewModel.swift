@@ -16,7 +16,7 @@ class AlbumListViewModel: BaseViewModel {
     var originalAlbums: [Album] = []
     
     func getAlbumList() -> Observable<Bool> {
-        return NetworkServiceManager.getAlbumList().map({ [weak self] searchResponse in
+        return NetworkServiceManager.searchItunes().map({ [weak self] searchResponse in
             self?.originalAlbums = searchResponse.results ?? Array()
             self?.currentList.accept(searchResponse.results ?? Array())
             return true
