@@ -17,7 +17,7 @@ class BookmarkedListViewController: BaseMVVMViewController<BookmarkedListViewMod
     }
     
     func setupTableViewUI() {
-        tableView.register(UINib(nibName: AlbumListCell.reuseId, bundle: nil), forCellReuseIdentifier: AlbumListCell.reuseId)
+        tableView.register(UINib(nibName: CollectionListCell.reuseId, bundle: nil), forCellReuseIdentifier: CollectionListCell.reuseId)
     }
     
     // MARK: Setup RX
@@ -27,10 +27,10 @@ class BookmarkedListViewController: BaseMVVMViewController<BookmarkedListViewMod
     }
     
     func setupTableViewWithRx() {
-        viewModel.bookmarkedAlbumsResults.bind(to: tableView.rx.items(cellIdentifier: AlbumListCell.reuseId,
-                                                          cellType: AlbumListCell.self))
+        viewModel.bookmarkedAlbumsResults.bind(to: tableView.rx.items(cellIdentifier: CollectionListCell.reuseId,
+                                                          cellType: CollectionListCell.self))
         { [weak self] cellIndex, album, cell in
-            cell.setupCellWithAlbum(album, bookmarked: true)
+            cell.setupCellWithCollection(album, bookmarked: true)
             cell.onBookmarkBtnTapped.subscribe { [weak self] (album, bookmarkState) in
                 self?.viewModel.removeBookmark(album)
             }.disposed(by: cell.disposeBag)
