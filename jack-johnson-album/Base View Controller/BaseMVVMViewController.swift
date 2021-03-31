@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+// MARK: A MVVM Based ViewController
 class BaseMVVMViewController<T: BaseViewModel>: BaseViewController {
     lazy var viewModel = T()
  

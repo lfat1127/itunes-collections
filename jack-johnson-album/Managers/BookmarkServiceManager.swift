@@ -8,8 +8,9 @@
 import Foundation
 import RealmSwift
 
-class RealmServiceManager {
-    public static let instance = RealmServiceManager()
+// MARK: Bookmark, un-bookmark and getting list of bookmarked album
+class BookmarkServiceManager {
+    public static let instance = BookmarkServiceManager()
     
     func saveAlbum(_ album: iTunesCollection) -> Bool {
         if let realm = try? Realm() {

@@ -18,6 +18,7 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
         setupTableViewUI()
     }
     
+    // MARK: Setup TableView UI
     func setupTableViewUI() {
         tableView.register(UINib(nibName: AlbumListCell.reuseId, bundle: nil), forCellReuseIdentifier: AlbumListCell.reuseId)
         addRefresher()
@@ -37,6 +38,7 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
         setupTableViewWithRx()
     }
     
+    // MARK: Setup TableView RX
     func setupTableViewWithRx() {
         viewModel.currentList.bind(to: tableView.rx.items(cellIdentifier: AlbumListCell.reuseId,
                                                           cellType: AlbumListCell.self))
@@ -59,6 +61,7 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Get Album List
         viewModel.getAlbumList().subscribe(onError: { error in
             print(error.localizedDescription)
         }).disposed(by: disposeBag)
@@ -66,6 +69,7 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // Get Bookmarked List
         viewModel.getAllBookmarkedAlbum(true)
     }
     

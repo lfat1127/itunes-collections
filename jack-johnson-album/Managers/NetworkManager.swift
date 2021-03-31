@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 import RxSwift
 
+// MARK: General network request setting
 class NetworkManager {
     public static let instance = NetworkManager()
     public let manager = Alamofire.Session.default

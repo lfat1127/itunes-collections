@@ -16,6 +16,7 @@ class BookmarkedListViewController: BaseMVVMViewController<BookmarkedListViewMod
         setupTableViewUI()
     }
     
+    // MARK: Setup TableView UI
     func setupTableViewUI() {
         tableView.register(UINib(nibName: AlbumListCell.reuseId, bundle: nil), forCellReuseIdentifier: AlbumListCell.reuseId)
     }
@@ -26,6 +27,7 @@ class BookmarkedListViewController: BaseMVVMViewController<BookmarkedListViewMod
         setupTableViewWithRx()
     }
     
+    // MARK: Setup TableView RX
     func setupTableViewWithRx() {
         viewModel.bookmarkedAlbumsResults.bind(to: tableView.rx.items(cellIdentifier: AlbumListCell.reuseId,
                                                           cellType: AlbumListCell.self))
@@ -47,6 +49,7 @@ class BookmarkedListViewController: BaseMVVMViewController<BookmarkedListViewMod
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // Get bookmark list
         viewModel.getAllBookmarkedAlbum()
     }
 }

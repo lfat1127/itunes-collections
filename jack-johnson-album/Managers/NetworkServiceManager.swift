@@ -9,7 +9,9 @@ import Foundation
 import RxSwift
 import Alamofire
 
+// MARK: Handle different Api request here
 class NetworkServiceManager {
+    // MARK: Search Itunes
     static func searchItunes(with term: String = "jack johnson", entity: String = "album") -> Observable<ItunesSearchResponse<iTunesCollection>> {
         return NetworkService<ItunesSearchResponse<iTunesCollection>>()
             .get(url: "https://itunes.apple.com/search",

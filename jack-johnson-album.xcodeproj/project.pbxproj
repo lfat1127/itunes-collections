@@ -37,11 +37,9 @@
 		716BB690261226D10054F27B /* NetworkServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB68F261226D10054F27B /* NetworkServiceManager.swift */; };
 		716BB69526122EE60054F27B /* DateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB69426122EE60054F27B /* DateFormatTransform.swift */; };
 		716BB69B26123B090054F27B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB69A26123B090054F27B /* Date+Ext.swift */; };
-		716BB69F26123B6F0054F27B /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB69E26123B6F0054F27B /* NSDecimalNumberTransform.swift */; };
-		716BB6A226123CF60054F27B /* NSDecimalNumber+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6A126123CF60054F27B /* NSDecimalNumber+Ext.swift */; };
 		716BB6A62612B9EC0054F27B /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6A52612B9EC0054F27B /* BaseTableViewCell.swift */; };
 		716BB6AA261346370054F27B /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB6A9261346370054F27B /* AlamofireImage */; };
-		716BB6AD26134A360054F27B /* RealmServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6AC26134A360054F27B /* RealmServiceManager.swift */; };
+		716BB6AD26134A360054F27B /* BookmarkServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6AC26134A360054F27B /* BookmarkServiceManager.swift */; };
 		716BB6B926136D060054F27B /* BookmarkedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6B826136D060054F27B /* BookmarkedListViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,10 +70,8 @@
 		716BB68F261226D10054F27B /* NetworkServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceManager.swift; sourceTree = "<group>"; };
 		716BB69426122EE60054F27B /* DateFormatTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatTransform.swift; sourceTree = "<group>"; };
 		716BB69A26123B090054F27B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
-		716BB69E26123B6F0054F27B /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
-		716BB6A126123CF60054F27B /* NSDecimalNumber+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDecimalNumber+Ext.swift"; sourceTree = "<group>"; };
 		716BB6A52612B9EC0054F27B /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		716BB6AC26134A360054F27B /* RealmServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServiceManager.swift; sourceTree = "<group>"; };
+		716BB6AC26134A360054F27B /* BookmarkServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkServiceManager.swift; sourceTree = "<group>"; };
 		716BB6B826136D060054F27B /* BookmarkedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,7 +211,7 @@
 			children = (
 				716BB682261212220054F27B /* NetworkManager.swift */,
 				716BB68F261226D10054F27B /* NetworkServiceManager.swift */,
-				716BB6AC26134A360054F27B /* RealmServiceManager.swift */,
+				716BB6AC26134A360054F27B /* BookmarkServiceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -240,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				716BB69426122EE60054F27B /* DateFormatTransform.swift */,
-				716BB69E26123B6F0054F27B /* NSDecimalNumberTransform.swift */,
 			);
 			path = "Mapping Transform Type";
 			sourceTree = "<group>";
@@ -249,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				716BB69A26123B090054F27B /* Date+Ext.swift */,
-				716BB6A126123CF60054F27B /* NSDecimalNumber+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -358,14 +352,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				716BB5FD2611F62D0054F27B /* AppDelegate.swift in Sources */,
-				716BB69F26123B6F0054F27B /* NSDecimalNumberTransform.swift in Sources */,
 				716BB6B926136D060054F27B /* BookmarkedListViewModel.swift in Sources */,
 				716BB6502611FE9F0054F27B /* AlbumListViewModel.swift in Sources */,
 				716BB5FF2611F62D0054F27B /* SceneDelegate.swift in Sources */,
 				716BB62F2611FB2E0054F27B /* BaseTabBarController.swift in Sources */,
 				716BB690261226D10054F27B /* NetworkServiceManager.swift in Sources */,
 				716BB65E261202680054F27B /* CustomCellable.swift in Sources */,
-				716BB6A226123CF60054F27B /* NSDecimalNumber+Ext.swift in Sources */,
 				716BB66226120A1E0054F27B /* iTunesCollection.swift in Sources */,
 				716BB64B2611FD320054F27B /* BookmarkedListViewController.swift in Sources */,
 				716BB63F2611FC7B0054F27B /* MainTabBarController.swift in Sources */,
@@ -375,7 +367,7 @@
 				716BB6332611FBB10054F27B /* BaseViewModel.swift in Sources */,
 				716BB6472611FD260054F27B /* AlbumListViewController.swift in Sources */,
 				716BB68B2612153D0054F27B /* ItunesSearchResponse.swift in Sources */,
-				716BB6AD26134A360054F27B /* RealmServiceManager.swift in Sources */,
+				716BB6AD26134A360054F27B /* BookmarkServiceManager.swift in Sources */,
 				716BB683261212220054F27B /* NetworkManager.swift in Sources */,
 				716BB6422611FCB40054F27B /* MainViewModel.swift in Sources */,
 				716BB655261202200054F27B /* AlbumListCell.swift in Sources */,

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import RxSwift
 
+// MARK: A MVVM Based UITabBarController
 class BaseTabBarController<T: BaseViewModel>: UITabBarController {
     var disposeBag = DisposeBag()
     lazy var viewModel = T()

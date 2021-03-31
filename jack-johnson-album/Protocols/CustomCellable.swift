@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: For UITableViewCell and UICollectionViewCell to define reuse-identifier
 protocol CustomCellable {
     static var reuseId: String { get }
 }

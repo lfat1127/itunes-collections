@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 
 class BaseTableViewCell: UITableViewCell {
+    // DisposeBag for subscribing observable from cell
     var disposeBag = DisposeBag()
     
     override func prepareForReuse() {

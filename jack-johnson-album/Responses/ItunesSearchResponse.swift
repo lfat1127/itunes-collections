@@ -8,6 +8,7 @@
 import Foundation
 import ObjectMapper
 
+// A generic response for iTunes Search
 class ItunesSearchResponse<T: Mappable>: Mappable {
     var resultCount: Int64?
     var results: [T]?

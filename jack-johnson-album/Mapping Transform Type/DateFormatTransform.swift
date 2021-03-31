@@ -9,12 +9,14 @@ import Foundation
 
 import ObjectMapper
 
+// MARK: convert json date string to date with given format
 public class DateFormatTransform: TransformType {
     public typealias Object = Date
     public typealias JSON = Double
 
     var dateFormat = DateFormatter()
 
+    // MARK: Define format string while init
     convenience init(_ format: String) {
         self.init()
         dateFormat.dateFormat = format

@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 import UIKit
 
+// MARK: A BaseViewController for some variables or functions that will use different view controller
 class BaseViewController: UIViewController {
     var disposeBag = DisposeBag()
     
