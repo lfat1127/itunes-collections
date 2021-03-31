@@ -20,6 +20,15 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     
     func setupTableViewUI() {
         tableView.register(UINib(nibName: AlbumListCell.reuseId, bundle: nil), forCellReuseIdentifier: AlbumListCell.reuseId)
+        addRefresher()
+    }
+    
+    func addRefresher() {
+        let refresher = UIRefreshControl()
+        tableView.refreshControl = refresher
+        refresher.rx.controlEvent(.valueChanged).subscribe { [weak self] _ in
+            self?.getAlbumList()
+        }.disposed(by: disposeBag)
     }
     
     // MARK: Setup RX
@@ -61,7 +70,9 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     }
     
     func getAlbumList() {
-        viewModel.getAlbumList().subscribe(onError: { [weak self] error in
+        viewModel.getAlbumList().subscribe(onNext: { [weak self] _ in
+            self?.tableView.refreshControl?.endRefreshing()
+        }, onError: { [weak self] error in
             //MARK: should use error message, but here force it to please try again
             self?.showErrorAlert(with: "Error on loading list, please try again")
         }).disposed(by: disposeBag)
