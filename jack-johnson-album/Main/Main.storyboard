@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bookmark-->
+        <!--Bookmarks-->
         <scene sceneID="UBb-js-OcT">
             <objects>
                 <viewController id="Q9a-mm-Mc1" customClass="BookmarkedListViewController" customModule="jack_johnson_album" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,7 @@
                             <constraint firstItem="YW3-pD-jii" firstAttribute="leading" secondItem="jFJ-yu-NMU" secondAttribute="leading" id="xZZ-ot-KMn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Bookmark" id="rIN-cJ-kRY"/>
+                    <navigationItem key="navigationItem" title="Bookmarks" id="rIN-cJ-kRY"/>
                     <connections>
                         <outlet property="tableView" destination="YW3-pD-jii" id="zTK-Wo-5YQ"/>
                     </connections>
@@ -61,7 +61,7 @@
                             <constraint firstItem="UCO-qd-4WY" firstAttribute="bottom" secondItem="p9T-3h-kkZ" secondAttribute="bottom" id="xKv-2b-okU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Jack Johnson" id="qJK-GX-UTu"/>
+                    <navigationItem key="navigationItem" title="Album" id="qJK-GX-UTu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="UCO-qd-4WY" id="Y3S-Az-aXS"/>
@@ -108,11 +108,11 @@
             </objects>
             <point key="canvasLocation" x="202.89855072463769" y="-599.33035714285711"/>
         </scene>
-        <!--Bookmark-->
+        <!--Bookmarks-->
         <scene sceneID="uSN-DK-bwx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CZz-Kq-ygJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bookmark" image="star.fill" catalog="system" id="OfF-wt-0v3"/>
+                    <tabBarItem key="tabBarItem" title="Bookmarks" image="star.fill" catalog="system" id="OfF-wt-0v3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2cY-NP-hY0">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
