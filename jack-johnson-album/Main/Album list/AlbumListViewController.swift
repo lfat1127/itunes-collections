@@ -20,7 +20,7 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     
     // MARK: Setup TableView UI
     func setupTableViewUI() {
-        tableView.register(UINib(nibName: AlbumListCell.reuseId, bundle: nil), forCellReuseIdentifier: AlbumListCell.reuseId)
+        tableView.register(UINib(nibName: CollectionListCell.reuseId, bundle: nil), forCellReuseIdentifier: CollectionListCell.reuseId)
         addRefresher()
     }
     
@@ -40,11 +40,11 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     
     // MARK: Setup TableView RX
     func setupTableViewWithRx() {
-        viewModel.currentList.bind(to: tableView.rx.items(cellIdentifier: AlbumListCell.reuseId,
-                                                          cellType: AlbumListCell.self))
+        viewModel.currentList.bind(to: tableView.rx.items(cellIdentifier: CollectionListCell.reuseId,
+                                                          cellType: CollectionListCell.self))
         { [weak self] cellIndex, album, cell in
             guard let this = self else { return }
-            cell.setupCellWithAlbum(album, bookmarked: this.viewModel.isAlbumBookmarked(album))
+            cell.setupCellWithCollection(album, bookmarked: this.viewModel.isAlbumBookmarked(album))
             cell.onBookmarkBtnTapped.subscribe { [weak self] (album, bookmarkState) in
                 self?.viewModel.bookmarkAlbum(album, with: !bookmarkState)
             }.disposed(by: cell.disposeBag)

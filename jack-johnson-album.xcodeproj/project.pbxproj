@@ -26,8 +26,8 @@
 		716BB6472611FD260054F27B /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB6462611FD260054F27B /* AlbumListViewController.swift */; };
 		716BB64B2611FD320054F27B /* BookmarkedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB64A2611FD320054F27B /* BookmarkedListViewController.swift */; };
 		716BB6502611FE9F0054F27B /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB64F2611FE9F0054F27B /* AlbumListViewModel.swift */; };
-		716BB655261202200054F27B /* AlbumListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB654261202200054F27B /* AlbumListCell.swift */; };
-		716BB659261202290054F27B /* AlbumListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716BB658261202290054F27B /* AlbumListCell.xib */; };
+		716BB655261202200054F27B /* CollectionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB654261202200054F27B /* CollectionListCell.swift */; };
+		716BB659261202290054F27B /* CollectionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716BB658261202290054F27B /* CollectionListCell.xib */; };
 		716BB65E261202680054F27B /* CustomCellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB65D261202680054F27B /* CustomCellable.swift */; };
 		716BB66226120A1E0054F27B /* iTunesCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB66126120A1E0054F27B /* iTunesCollection.swift */; };
 		716BB67D2612108C0054F27B /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB67C2612108C0054F27B /* ObjectMapper */; };
@@ -60,8 +60,8 @@
 		716BB6462611FD260054F27B /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		716BB64A2611FD320054F27B /* BookmarkedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedListViewController.swift; sourceTree = "<group>"; };
 		716BB64F2611FE9F0054F27B /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
-		716BB654261202200054F27B /* AlbumListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListCell.swift; sourceTree = "<group>"; };
-		716BB658261202290054F27B /* AlbumListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumListCell.xib; sourceTree = "<group>"; };
+		716BB654261202200054F27B /* CollectionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListCell.swift; sourceTree = "<group>"; };
+		716BB658261202290054F27B /* CollectionListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionListCell.xib; sourceTree = "<group>"; };
 		716BB65D261202680054F27B /* CustomCellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellable.swift; sourceTree = "<group>"; };
 		716BB66126120A1E0054F27B /* iTunesCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesCollection.swift; sourceTree = "<group>"; };
 		716BB682261212220054F27B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -181,13 +181,13 @@
 			path = "Bookmarked list";
 			sourceTree = "<group>";
 		};
-		716BB6522612020B0054F27B /* AlbumListCell */ = {
+		716BB6522612020B0054F27B /* CollectionListCell */ = {
 			isa = PBXGroup;
 			children = (
-				716BB654261202200054F27B /* AlbumListCell.swift */,
-				716BB658261202290054F27B /* AlbumListCell.xib */,
+				716BB654261202200054F27B /* CollectionListCell.swift */,
+				716BB658261202290054F27B /* CollectionListCell.xib */,
 			);
-			path = AlbumListCell;
+			path = CollectionListCell;
 			sourceTree = "<group>";
 		};
 		716BB65B261202530054F27B /* Protocols */ = {
@@ -259,7 +259,7 @@
 		716BB6BD26136E2F0054F27B /* Shared UI */ = {
 			isa = PBXGroup;
 			children = (
-				716BB6522612020B0054F27B /* AlbumListCell */,
+				716BB6522612020B0054F27B /* CollectionListCell */,
 			);
 			path = "Shared UI";
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				716BB63C2611FC6C0054F27B /* Main.storyboard in Resources */,
 				716BB6092611F62E0054F27B /* LaunchScreen.storyboard in Resources */,
 				716BB6062611F62E0054F27B /* Assets.xcassets in Resources */,
-				716BB659261202290054F27B /* AlbumListCell.xib in Resources */,
+				716BB659261202290054F27B /* CollectionListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +370,7 @@
 				716BB6AD26134A360054F27B /* BookmarkServiceManager.swift in Sources */,
 				716BB683261212220054F27B /* NetworkManager.swift in Sources */,
 				716BB6422611FCB40054F27B /* MainViewModel.swift in Sources */,
-				716BB655261202200054F27B /* AlbumListCell.swift in Sources */,
+				716BB655261202200054F27B /* CollectionListCell.swift in Sources */,
 				716BB6A62612B9EC0054F27B /* BaseTableViewCell.swift in Sources */,
 				716BB69526122EE60054F27B /* DateFormatTransform.swift in Sources */,
 				716BB69B26123B090054F27B /* Date+Ext.swift in Sources */,
