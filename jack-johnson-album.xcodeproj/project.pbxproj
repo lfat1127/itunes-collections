@@ -122,7 +122,7 @@
 				716BB6072611F62E0054F27B /* LaunchScreen.storyboard */,
 				716BB60A2611F62E0054F27B /* Info.plist */,
 				716BB6BD26136E2F0054F27B /* Shared UI */,
-				716BB6A42612B9C80054F27B /* Base tableView Cell */,
+				716BB6A42612B9C80054F27B /* Base TableView Cell */,
 				716BB69926123AFE0054F27B /* Extension */,
 				716BB69326122EBD0054F27B /* Mapping Transform Type */,
 				716BB689261215190054F27B /* Responses */,
@@ -130,29 +130,29 @@
 				716BB6802612120C0054F27B /* Managers */,
 				716BB66026120A110054F27B /* Models */,
 				716BB65B261202530054F27B /* Protocols */,
-				716BB6312611FB980054F27B /* Base view model */,
-				716BB6242611F9530054F27B /* Base view controller */,
+				716BB6312611FB980054F27B /* Base View Model */,
+				716BB6242611F9530054F27B /* Base View Controller */,
 				716BB63A2611FC570054F27B /* Main */,
 			);
 			path = "jack-johnson-album";
 			sourceTree = "<group>";
 		};
-		716BB6242611F9530054F27B /* Base view controller */ = {
+		716BB6242611F9530054F27B /* Base View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				716BB6252611FA1B0054F27B /* BaseViewController.swift */,
 				716BB62B2611FAAA0054F27B /* BaseMVVMViewController.swift */,
 				716BB62E2611FB2E0054F27B /* BaseTabBarController.swift */,
 			);
-			path = "Base view controller";
+			path = "Base View Controller";
 			sourceTree = "<group>";
 		};
-		716BB6312611FB980054F27B /* Base view model */ = {
+		716BB6312611FB980054F27B /* Base View Model */ = {
 			isa = PBXGroup;
 			children = (
 				716BB6322611FBB10054F27B /* BaseViewModel.swift */,
 			);
-			path = "Base view model";
+			path = "Base View Model";
 			sourceTree = "<group>";
 		};
 		716BB63A2611FC570054F27B /* Main */ = {
@@ -254,12 +254,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		716BB6A42612B9C80054F27B /* Base tableView Cell */ = {
+		716BB6A42612B9C80054F27B /* Base TableView Cell */ = {
 			isa = PBXGroup;
 			children = (
 				716BB6A52612B9EC0054F27B /* BaseTableViewCell.swift */,
 			);
-			path = "Base tableView Cell";
+			path = "Base TableView Cell";
 			sourceTree = "<group>";
 		};
 		716BB6BD26136E2F0054F27B /* Shared UI */ = {

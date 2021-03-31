@@ -59,4 +59,11 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
         super.viewDidAppear(animated)
         viewModel.getAllBookmarkedAlbum(true)
     }
+    
+    func getAlbumList() {
+        viewModel.getAlbumList().subscribe(onError: { [weak self] error in
+            //MARK: should use error message, but here force it to please try again
+            self?.showErrorAlert(with: "Error on loading list, please try again")
+        }).disposed(by: disposeBag)
+    }
 }
