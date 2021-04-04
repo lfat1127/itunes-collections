@@ -12,12 +12,11 @@ import RealmSwift
 class BookmarkServiceManager {
     public static let instance = BookmarkServiceManager()
     
-    func saveAlbum(_ album: iTunesCollection) -> Bool {
+    func saveAlbum(_ album: iTunesCollectionObject) -> Bool {
         if let realm = try? Realm() {
             do {
                 try realm.write {
                     realm.add(album)
-                    album.bookmarked = true
                 }
                 return true
             } catch {
@@ -27,11 +26,21 @@ class BookmarkServiceManager {
         return false
     }
     
-    func removeAlbum(_ album: iTunesCollection) -> Bool  {
+    func findAndRemoveAlbum(_ album: iTunesCollection) -> Bool  {
+        if let realm = try? Realm() {
+            if let savedObject = realm.objects(iTunesCollectionObject.self)
+                .first(where: { $0.collectionId == album.collectionId}) {
+                return removeAlbumObject(savedObject)
+            }
+        }
+        return false
+    }
+    
+    func removeAlbumObject(_ albumOjbect: iTunesCollectionObject) -> Bool  {
         if let realm = try? Realm() {
             do {
                 try realm.write {
-                    album.bookmarked = false
+                    realm.delete(albumOjbect)
                 }
                 return true
             } catch {
@@ -41,10 +50,10 @@ class BookmarkServiceManager {
         return false
     }
     
-    func getAllBookmarkedAlbum() -> Results<iTunesCollection>? {
+    func getAllBookmarkedAlbum() -> Results<iTunesCollectionObject>? {
         if let realm = try? Realm() {
             realm.refresh()
-            return realm.objects(iTunesCollection.self)
+            return realm.objects(iTunesCollectionObject.self)
         }
         return nil
     }

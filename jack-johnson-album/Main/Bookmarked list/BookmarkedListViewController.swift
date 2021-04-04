@@ -31,9 +31,9 @@ class BookmarkedListViewController: BaseMVVMViewController<BookmarkedListViewMod
     func setupTableViewWithRx() {
         viewModel.bookmarkedAlbumsResults.bind(to: tableView.rx.items(cellIdentifier: CollectionListCell.reuseId,
                                                           cellType: CollectionListCell.self))
-        { [weak self] cellIndex, album, cell in
-            cell.setupCellWithCollection(album, bookmarked: true)
-            cell.onBookmarkBtnTapped.subscribe { [weak self] (album, bookmarkState) in
+        { [weak self] cellIndex, savedAlbum, cell in
+            cell.setupCellWithCollectionObject(savedAlbum)
+            cell.onSavedObjectBookmarkBtnTapped.subscribe { [weak self] album in
                 self?.viewModel.removeBookmark(album)
             }.disposed(by: cell.disposeBag)
 

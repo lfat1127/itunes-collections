@@ -6,18 +6,16 @@
 //
 
 import Foundation
-import ObjectMapper
+import SwiftyJSON
 
 // A generic response for iTunes Search
-class ItunesSearchResponse<T: Mappable>: Mappable {
-    var resultCount: Int64?
-    var results: [T]?
-    required init?(map: Map) {
-        
-    }
+struct ItunesSearchResponse<T: Mappable>: Mappable {
     
-    func mapping(map: Map) {
-        resultCount <- map["resultCount"]
-        results <- map["results"]
+    var resultCount: Int
+    var results: [T]
+    
+    static func map(with json: JSON) -> ItunesSearchResponse<T> {
+        return ItunesSearchResponse(resultCount: json["resultCount"].intValue,
+                                    results: json["results"].arrayValue.map({ T.map(with: $0) }))
     }
 }

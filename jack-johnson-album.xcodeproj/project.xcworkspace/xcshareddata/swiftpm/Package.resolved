@@ -20,15 +20,6 @@
         }
       },
       {
-        "package": "ObjectMapper",
-        "repositoryURL": "https://github.com/tristanhimmelman/ObjectMapper",
-        "state": {
-          "branch": null,
-          "revision": "0b96a734de3ea1c87374ae677064f86adb0716ec",
-          "version": "4.2.0"
-        }
-      },
-      {
         "package": "Realm",
         "repositoryURL": "https://github.com/realm/realm-cocoa",
         "state": {
@@ -53,6 +44,15 @@
           "branch": null,
           "revision": "7e01c05f25c025143073eaa3be3532f9375c614b",
           "version": "6.1.0"
+        }
+      },
+      {
+        "package": "SwiftyJSON",
+        "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON",
+        "state": {
+          "branch": null,
+          "revision": "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
+          "version": "5.0.1"
         }
       }
     ]

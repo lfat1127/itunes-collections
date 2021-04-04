@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import ObjectMapper
+import SwiftyJSON
 import Alamofire
 import RxSwift
 
@@ -25,13 +25,10 @@ class NetworkService<T: Mappable> {
             request.responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    let result = Mapper<T>().map(JSONObject: value)
-                    if let returnValue = result {
-                        observer.onNext(returnValue)
-                        observer.onCompleted()
-                    } else {
-                        observer.onError(NSError(domain: "NetworkService", code: -1, userInfo: [NSLocalizedDescriptionKey: "JSON parse error"]))
-                    }
+                    let json = JSON(value)
+                    let result = T.map(with: json)
+                    observer.onNext(result)
+                    observer.onCompleted()
                     break
                 case .failure(let error):
                     // Can define different errors before onError

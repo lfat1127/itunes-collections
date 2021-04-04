@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71487F84261962E5001195E5 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 71487F83261962E5001195E5 /* SwiftyJSON */; };
+		71487F87261962EE001195E5 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71487F86261962EE001195E5 /* Mappable.swift */; };
+		71487F8A261964CB001195E5 /* JSON+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71487F89261964CB001195E5 /* JSON+Ext.swift */; };
 		716BB5FD2611F62D0054F27B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB5FC2611F62D0054F27B /* AppDelegate.swift */; };
 		716BB5FF2611F62D0054F27B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB5FE2611F62D0054F27B /* SceneDelegate.swift */; };
 		716BB6062611F62E0054F27B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 716BB6052611F62E0054F27B /* Assets.xcassets */; };
@@ -30,7 +33,6 @@
 		716BB659261202290054F27B /* CollectionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716BB658261202290054F27B /* CollectionListCell.xib */; };
 		716BB65E261202680054F27B /* CustomCellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB65D261202680054F27B /* CustomCellable.swift */; };
 		716BB66226120A1E0054F27B /* iTunesCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB66126120A1E0054F27B /* iTunesCollection.swift */; };
-		716BB67D2612108C0054F27B /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 716BB67C2612108C0054F27B /* ObjectMapper */; };
 		716BB683261212220054F27B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB682261212220054F27B /* NetworkManager.swift */; };
 		716BB687261212E90054F27B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB686261212E90054F27B /* NetworkService.swift */; };
 		716BB68B2612153D0054F27B /* ItunesSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716BB68A2612153D0054F27B /* ItunesSearchResponse.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71487F86261962EE001195E5 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		71487F89261964CB001195E5 /* JSON+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+Ext.swift"; sourceTree = "<group>"; };
 		716BB5F92611F62D0054F27B /* jack-johnson-album.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jack-johnson-album.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		716BB5FC2611F62D0054F27B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		716BB5FE2611F62D0054F27B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,8 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716BB67D2612108C0054F27B /* ObjectMapper in Frameworks */,
 				716BB61F2611F7C90054F27B /* Alamofire in Frameworks */,
+				71487F84261962E5001195E5 /* SwiftyJSON in Frameworks */,
 				716BB61A2611F7AD0054F27B /* RealmSwift in Frameworks */,
 				716BB6162611F7320054F27B /* RxSwift in Frameworks */,
 				716BB61C2611F7AD0054F27B /* Realm in Frameworks */,
@@ -194,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				716BB65D261202680054F27B /* CustomCellable.swift */,
+				71487F86261962EE001195E5 /* Mappable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				716BB69A26123B090054F27B /* Date+Ext.swift */,
+				71487F89261964CB001195E5 /* JSON+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -286,8 +292,8 @@
 				716BB6192611F7AD0054F27B /* RealmSwift */,
 				716BB61B2611F7AD0054F27B /* Realm */,
 				716BB61E2611F7C90054F27B /* Alamofire */,
-				716BB67C2612108C0054F27B /* ObjectMapper */,
 				716BB6A9261346370054F27B /* AlamofireImage */,
+				71487F83261962E5001195E5 /* SwiftyJSON */,
 			);
 			productName = "jack-johnson-album";
 			productReference = 716BB5F92611F62D0054F27B /* jack-johnson-album.app */;
@@ -320,8 +326,8 @@
 				716BB6122611F7320054F27B /* XCRemoteSwiftPackageReference "RxSwift" */,
 				716BB6182611F7AD0054F27B /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				716BB61D2611F7C90054F27B /* XCRemoteSwiftPackageReference "Alamofire" */,
-				716BB67B2612108C0054F27B /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 				716BB6A8261346370054F27B /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				71487F82261962E5001195E5 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 716BB5FA2611F62D0054F27B /* Products */;
 			projectDirPath = "";
@@ -351,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71487F8A261964CB001195E5 /* JSON+Ext.swift in Sources */,
 				716BB5FD2611F62D0054F27B /* AppDelegate.swift in Sources */,
 				716BB6B926136D060054F27B /* BookmarkedListViewModel.swift in Sources */,
 				716BB6502611FE9F0054F27B /* AlbumListViewModel.swift in Sources */,
@@ -370,6 +377,7 @@
 				716BB6AD26134A360054F27B /* BookmarkServiceManager.swift in Sources */,
 				716BB683261212220054F27B /* NetworkManager.swift in Sources */,
 				716BB6422611FCB40054F27B /* MainViewModel.swift in Sources */,
+				71487F87261962EE001195E5 /* Mappable.swift in Sources */,
 				716BB655261202200054F27B /* CollectionListCell.swift in Sources */,
 				716BB6A62612B9EC0054F27B /* BaseTableViewCell.swift in Sources */,
 				716BB69526122EE60054F27B /* DateFormatTransform.swift in Sources */,
@@ -571,6 +579,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		71487F82261962E5001195E5 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.1;
+			};
+		};
 		716BB6122611F7320054F27B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -595,14 +611,6 @@
 				version = 5.4.1;
 			};
 		};
-		716BB67B2612108C0054F27B /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper";
-			requirement = {
-				kind = exactVersion;
-				version = 4.2.0;
-			};
-		};
 		716BB6A8261346370054F27B /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
@@ -614,6 +622,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		71487F83261962E5001195E5 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71487F82261962E5001195E5 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		716BB6132611F7320054F27B /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 716BB6122611F7320054F27B /* XCRemoteSwiftPackageReference "RxSwift" */;
@@ -638,11 +651,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 716BB61D2611F7C90054F27B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		716BB67C2612108C0054F27B /* ObjectMapper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 716BB67B2612108C0054F27B /* XCRemoteSwiftPackageReference "ObjectMapper" */;
-			productName = ObjectMapper;
 		};
 		716BB6A9261346370054F27B /* AlamofireImage */ = {
 			isa = XCSwiftPackageProductDependency;

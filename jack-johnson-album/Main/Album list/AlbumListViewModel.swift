@@ -12,30 +12,25 @@ import RealmSwift
 
 class AlbumListViewModel: BaseViewModel {
     let currentList: BehaviorRelay<[iTunesCollection]> = BehaviorRelay(value: [])
-    var bookmarkedAlbumsResults: Results<iTunesCollection>? = nil
+    var bookmarkedAlbumsResults: Results<iTunesCollectionObject>? = nil
     var originalAlbums: [iTunesCollection] = []
     
     func getAlbumList() -> Observable<Bool> {
         return NetworkServiceManager.searchItunes().map({ [weak self] searchResponse in
-            self?.originalAlbums = searchResponse.results ?? Array()
-            self?.currentList.accept(searchResponse.results ?? Array())
+            self?.originalAlbums = searchResponse.results
+            self?.currentList.accept(searchResponse.results)
             return true
         })
     }
     
     func bookmarkAlbum(_ album: iTunesCollection, with bookmarkState: Bool) {
         if bookmarkState {
-            if BookmarkServiceManager.instance.saveAlbum(album) {
+            if BookmarkServiceManager.instance.saveAlbum(iTunesCollectionObject.convertFromITunesCollection(collection: album)) {
                 getAllBookmarkedAlbum(true)
             }
         } else {
-            if let bookmarkedAlbums = bookmarkedAlbumsResults,
-               let albumToDelete = bookmarkedAlbums.first(where: { bookmarkedAlbum in
-                bookmarkedAlbum.collectionId == album.collectionId
-               }) {
-                if BookmarkServiceManager.instance.removeAlbum(albumToDelete) {
-                    getAllBookmarkedAlbum(true)
-                }
+            if BookmarkServiceManager.instance.findAndRemoveAlbum(album) {
+                getAllBookmarkedAlbum(true)
             }
         }
     }
@@ -43,7 +38,7 @@ class AlbumListViewModel: BaseViewModel {
     func isAlbumBookmarked(_ album: iTunesCollection) -> Bool {
         if let bookmarkedAlbums = bookmarkedAlbumsResults {
             return bookmarkedAlbums.contains { bookmarkedAlbum in
-                bookmarkedAlbum.collectionId == album.collectionId && bookmarkedAlbum.bookmarked
+                bookmarkedAlbum.collectionId == album.collectionId
             }
         } else {
             return false
