@@ -15,12 +15,11 @@ class AlbumListViewModel: BaseViewModel {
     var bookmarkedAlbumsResults: Results<iTunesCollectionObject>? = nil
     var originalAlbums: [iTunesCollection] = []
     
-    func getAlbumList() -> Observable<Bool> {
+    func getAlbumList() -> Single<Bool> {
         return NetworkServiceManager.searchItunes().map({ [weak self] searchResponse in
             self?.originalAlbums = searchResponse.results
             self?.currentList.accept(searchResponse.results)
-            return true
-        })
+        }).map({_ in return true})
     }
     
     func bookmarkAlbum(_ album: iTunesCollection, with bookmarkState: Bool) {

@@ -12,7 +12,7 @@ import Alamofire
 // MARK: Handle different Api request here
 class NetworkServiceManager {
     // MARK: Search Itunes
-    static func searchItunes(with term: String = "jack johnson", entity: String = "album") -> Observable<ItunesSearchResponse<iTunesCollection>> {
+    static func searchItunes(with term: String = "jack johnson", entity: String = "album") -> Single<ItunesSearchResponse<iTunesCollection>> {
         return NetworkService<ItunesSearchResponse<iTunesCollection>>()
             .get(url: "https://itunes.apple.com/search",
                  params: ["term": term, "entity": entity], encoding: URLEncoding.default)
