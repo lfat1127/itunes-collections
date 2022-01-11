@@ -62,7 +62,7 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Get Album List
-        viewModel.getAlbumList().subscribe(onError: { error in
+        viewModel.getAlbumList().subscribe(onFailure: { error in
             print(error.localizedDescription)
         }).disposed(by: disposeBag)
     }
@@ -74,9 +74,9 @@ class AlbumListViewController: BaseMVVMViewController<AlbumListViewModel> {
     }
     
     func getAlbumList() {
-        viewModel.getAlbumList().subscribe(onNext: { [weak self] _ in
+        viewModel.getAlbumList().subscribe(onSuccess: { [weak self] _ in
             self?.tableView.refreshControl?.endRefreshing()
-        }, onError: { [weak self] error in
+        }, onFailure: { [weak self] error in
             //MARK: should use error message, but here force it to please try again
             self?.showErrorAlert(with: "Error on loading list, please try again")
         }).disposed(by: disposeBag)
